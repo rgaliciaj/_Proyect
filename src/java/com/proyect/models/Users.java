@@ -12,7 +12,8 @@ package com.proyect.models;
 public class Users {
     private String username;
     private String password;
-
+	
+	//saludos ronald 
     public Users(String username, String password) {
         this.username = username;
         this.password = password;
