@@ -1,7 +1,7 @@
 <%-- 
-    Document   : homee
-    Created on : 13/10/2019, 07:43:50 PM
-    Author     : Ronald Galicia
+    Document   : menu
+    Created on : 29/10/2019, 11:48:55 AM
+    Author     : Ronald
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -12,13 +12,12 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
         <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">
-            <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-            Bienvenido : <%= session.getAttribute("username") %>
+            Bienvenido :  <%= session.getAttribute("user") %>
         </a>
         </nav>
         <title>JSP Page</title>
     </head>
-    <body>
+        <body>
     <br>
         <div class="row">
          <div class="col-sm-6">
@@ -26,7 +25,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Special title treatment</h5>
                     <p class="card-text">Registra un nuevo usuario.</p>
-                    <a href="#" class="btn btn-primary">Entrar</a>
+                    <a href="crearUsuario.jsp"  class="btn btn-primary">Entrar</a>
                 </div>
             </div>
             </div>
@@ -35,7 +34,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Special title treatment</h5>
                     <p class="card-text">Registra un estudiantet.</p>
-                    <a href="#" class="btn btn-primary">Entrar</a>
+                    <a href="crearEstudiante.jsp" class="btn btn-primary">Entrar</a>
                 </div>
             </div>
             </div>
@@ -45,8 +44,8 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">Agrega una inscripcion</p>
-                    <a href="#" class="btn btn-primary">Entrar</a>
+                    <p class="card-text">Agrega un estudiante a la cola </p>
+                    <a href="colaInscripcion.jsp" class="btn btn-primary">Entrar</a>
                 </div>
             </div>
             </div>
@@ -54,8 +53,8 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">Inscribir estudiante.</p>
-                    <a href="#" class="btn btn-primary">Entrar</a>
+                    <p class="card-text">Inscripciones.</p>
+                    <a  href="inscribirEstudiante.jsp" class="btn btn-primary">Entrar</a>
                 </div>
             </div>
             </div>
@@ -63,22 +62,17 @@
         <div class="row">
          <div class="margen-personalizado">
             <div class="card">
-                <form method="POST" action="UsersController"  > 
+                <form method="post" action="UsuariosController" >
                     <div class="card-body">
                         <h5 class="card-title">Special title treatment </h5>
                         <p class="card-text">te apreciamos :3.</p>
-                        <a href="index.html" class="btn btn-primary" name="expire" >Salir</a>
+                        <input type="hidden" name="outSession" value="out" >
+                        <input type="submit" class="btn btn-primary" value="Salir" >
                     </div>
-                </form>
-                
+                </form>                 
             </div>
             </div>
         </div>
     </body>
-    <style>
-        .margen-personalizado {
-            display: flex;
-            justify-content : center;
-        }
-    </style>
+    
 </html>
